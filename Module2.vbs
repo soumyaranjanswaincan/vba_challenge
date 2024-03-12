@@ -31,13 +31,13 @@ Sub Create_stock_summary(sheetname As String)
     skipOpenPrice = False
     
     
-    ' Keep track of the location for each credit card brand in the summary table
+    ' Keep track of the location for each ticker in the summary table
     Dim Summary_Table_Row As Integer
     Summary_Table_Row = 2
     
     For i = 2 To lastrow
 
-    ' Check if we are still within the same credit card brand, if it is not...
+    ' Check if we are still within the ticker
     If Cells(i + 1, 1).Value <> Cells(i, 1).Value Then
 
       ' Set the ticker value
@@ -77,7 +77,7 @@ Sub Create_stock_summary(sheetname As String)
       totalVolume = 0
       skipOpenPrice = False
 
-    ' If the cell immediately following a row is the same brand...
+    ' If the cell immediately following a row is the same ticker
     Else
 
       ' Add to the Brand Total
